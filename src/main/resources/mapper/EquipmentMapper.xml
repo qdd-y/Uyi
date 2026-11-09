@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.uyi.mapper.EquipmentMapper">
+    <delete id="deleteById">
+        delete from equipment_order where order_num=#{orderNum}
+    </delete>
+
+
+    <select id="queryByUserId" resultType="com.example.uyi.entity.EquipmentOrder">
+        select * from equipment_order where user_id=#{userId}
+    </select>
+    <select id="queryByUserIdAndDeviceInfId" resultType="com.example.uyi.entity.EquipmentOrder">
+        select * from equipment_order where user_id= #{userId} and device_inf_id= #{deviceInfId}
+    </select>
+</mapper>
